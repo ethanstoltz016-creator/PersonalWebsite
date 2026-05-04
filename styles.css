@@ -57,7 +57,7 @@
     /* #endregion */
     /* #region main page */
     body{
-        background-color: #074A6E;
+        background-color: #1b4123;
         color:#00070E;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin: 0;
@@ -65,7 +65,7 @@
     main{
         width: 100%;
         padding: 2em;
-        background-color: #EFF8FB;
+        background-color: #a3d6ac;
     }
     footer{
         background-color: #074A6E;
@@ -272,34 +272,6 @@
     }
     #hero{                                  /*typical id name for pictures*/
         width: 100%;
-    }
-    /* #endregion */
-    /* #region Store */
-    .product-grid{
-        
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-    }
-    .product-card{
-        width: 33.33%;
-        margin-bottom: 30px;
-        border: 1px solid #DDD;
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-    }
-    .product-card img{
-        width: 30%;
-        min-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-    .price{
-        font-weight: bold;
-        margin-bottom: 10px;
     }
     /* #endregion */
     /* #region Contact */
@@ -593,32 +565,6 @@
         width: 100%;
     }
     /* #endregion */
-    /* #region Store */
-    .product-grid{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    .product-card{
-        width: 50%;
-        margin-bottom: 30px;
-        border: 1px solid #DDD;
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-    }
-    .product-card img{
-        width: 50%;
-        min-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-    .price{
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    /* #endregion */
     /* #region Contact */
     #name{
         font-size: 1.5em;
@@ -870,32 +816,6 @@
     }
     #hero{                                  /*typical id name for pictures*/
         width: 100%;
-    }
-    /* #endregion */
-    /* #region Store */
-    .product-grid{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    .product-card{
-        width: 100%;
-        margin-bottom: 30px;
-        border: 1px solid #DDD;
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-    }
-    .product-card img{
-        width: 30%;
-        min-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-    .price{
-        font-weight: bold;
-        margin-bottom: 10px;
     }
     /* #endregion */
     /* #region Contact */
