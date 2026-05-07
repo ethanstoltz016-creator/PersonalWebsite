@@ -1,0 +1,61 @@
+body{
+    background-color: #EFF8FB;
+    color: #00070E;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #074A6E;
+    color: #EFF8FB;
+    text-align: center;
+    padding: 1.5em 0;
+}
+h1{
+    line-height: 200%;
+    margin: 0;
+}
+nav{
+    background-color: #04293E;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.75em;
+}
+nav a{
+    color: #B5CDD8;
+    text-decoration: none;
+    margin: 0 15em;
+}
+/*  This is similar to MIT's button.click */
+nav a:hover{
+    color: #28BBDC;
+}
+h2{
+    font-size: 200%;
+    color: #145E6E;
+}
+footer{
+    background-color: #074A6E;
+    color: #EFF8FB;
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    padding: 2em 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*  class section */
+.camp{      /* is used to ephasize company name */
+    color: #145E6E;
+    font-style: italic;
+    font-weight: bold;
+}
+/* id section */
+#wrapper{   
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px;
+    /* shadow the tag and rgba(%,%,%,%) */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+    background-color: #EFF8FB;
+}

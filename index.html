@@ -4,41 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="NavScript.js" defer></script>
     <title>Ethan Stoltz</title>
 </head>
 <body>
     <header>
         <a href="index.html"><h1>Ethan Stoltz</h1></a>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-            <li><a href="about.html">About Me</a></li>
-        </ul>
-    </nav>
-    <div id="wrapper">
-        <main>
-            <h2>Launch Your Coding Career</h2>
-                <p>Get job-ready with our practical coding bootcamps.  <i class="camp">Code Central Bootcamp</i> focus on hands-on training in Web Development, Data Science, and Python, ensuring you gain the real-world skills employers demand.  Learn by doing, build a strong portfolio, and graduate prepared to make an immediate impact.</p>
+    <div id="mySidebar" class="sidebar collapsed">
+        <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact Me</a>
+            <a href="about.html">About Me</a>
 
-            <h2>Courses</h2>
-                <h3>Web Development</h3>
-                <p>Build dynamic and interactive websites using HTML, CSS, and JavaScript.</p>
-                <h3>Data Science</h3>
-                <p>Uncover insights and patterns from data using Python and machine learning.</p>
-                <h3>Python Programming</h3>
-                <p>Master the fundamentals of Python and build powerful applications.</p>
+        <div class="sidebar-footer">
+            <i class="camp" style="color: #EFF8FB;">Ethan Stoltz</i> 2026<br>
+            123 Main Street, Yourtown USA<br>
+            Contact: <a href="mailto:ethan.stoltz016@gmail.com">ethan.stoltz016@gmail.com</a><br>
+            812-568-6570
+        </div>
+    </div>
+    
+    <div id="wrapper" class="collapsed">
+        <main>
+            <h2>Project</h2>
+                <h3>_______________</h3>
+                
             <h2>Links</h2>
                 <h3>GitHub</h3>
                 <p><a href="https://github.com/ethanstoltz016-creator" target="_blank">Ethan's GitHub Profile</a></p>
-                <p><a href="https://github.com/ethanstoltz016-creator/Portfolio" target="_blank">Project Portfolio</a></p>
+                <p><a href="https://github.com/ethanstoltz016-creator/ProjectPortfolio" target="_blank">Project Portfolio</a></p>
                 
                 <p><a href="https://https://sictc.evscschools.com/" target="_blank">Southern Indiana Career and Technical Center</a></p>
-                <h3>Data Science</h3>
-                <p>Uncover insights and patterns from data using Python and machine learning.</p>
                 <div class="clear"></div>
         </main>
+    </div>
+    <footer>
+        <i class="camp" style="color: #EFF8FB;">Ethan Stoltz</i> 2026<br>
+        123 Main Street, Yourtown USA<br>
+        Contact: <a href="mailto:ethan.stoltz016@gmail.com">ethan.stoltz016@gmail.com</a><br>
+        <a href="tel:812-568-6570" id="mobile">812-568-6570</a>
+        <span id="desktop">812-568-6570</span>
+    </footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
 @media(min-width:1024px){
     /* #region Header */
     header{
-        background-image: url("assets/images/Banner.JPG");
+        background-image: url("assets/images/Banner.jpg");
         background-size: 100% 100%;  /* both ht and wt is 100% */
         background-position: center;
         min-height: 180px;
@@ -12,47 +12,101 @@
         border-bottom: 4px solid #145E6E;
     }
     header a:link{text-decoration: none;color: #f5f5f5;}
-    header a:visited{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
     /* #endregion */
     /* #region NAV */
-    nav{
-        position: fixed;  /*HARDCODE the x,y location*/
-        top:0;
-        left:0;    /*left side should be at 0 on the page*/
-        text-align: right;
-        width: 100%;
-        padding: .5em;
-        padding-right: 0;
-        background-color: #491be3;
-        margin: 0;
-        z-index:9999;
+    .sidebar {
+        height: 100%;
+        width: 250px; /* Expanded width */
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #491be3; /* GitHub-like dark background */
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border-right: 20px solid #2B2B2B;
     }
-    nav a{
+
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
         text-decoration: none;
-        transition: all 0.3s;   /*CSS Animations*/
-        display:block;
-        text-align: center;
+        font-size: 18px;
+        color: #00ffff;
+        display: block;
+        transition: all 0.3s;
     }
-    /* This is similar to MIT's button.click */
-    nav a:hover{
+    .sidebar > a:hover{
         color: #28BBDC;
         padding-left: 10px;  /* subtle move */
     }
-    nav a:link{color: #3F2860}
-    nav a:visited{color: #497777}
-    nav ul{
-        display: flex;
-        flex-wrap: nowrap;       /*nowrap means should be in one line*/
-        justify-content: flex-end;
-        margin: 0;
-        font-size: 1.2em;
-        list-style-type: none;
+    .sidebar a:link{color: #3F2860}
+
+    .sidebar-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        padding: 0 32px;
+        color: #c9f9ff;
+        font-size: 14px;
+        line-height: 1.5;
     }
-    nav li{
-        width: 7em;
-        padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
-        display:inline;
+
+    .sidebar .sidebar-footer a {
+        color: #c9f9ff;
+        font-size: 13px;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 0;
+        transition: color 0.3s;
+    }
+
+    .sidebar .sidebar-footer a:hover {
+        color: #e2fdff;
+        text-decoration: underline;
+    }
+
+    .sidebar-footer i {
+        color: #EFF8FB;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        background-color: #491be3;
+        color: #00ffff;
+        border: 2px solid #00ffff;
+        padding: 10px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s;
+        border-radius: 4px;
+    }
+
+    .toggle-btn:hover {
+        background-color: #6a2fe8;
+        transform: scale(1.1);
+    }
+
+    /* Class to apply when collapsed */
+    .sidebar.collapsed {
+          width: 0;
+    }
+
+    #wrapper {
+        transition: margin-left .5s;
+        padding: 16px;
+        margin-left: 250px;
+    }
+
+    #wrapper.collapsed {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
     /* #endregion */
     /* #region main page */
@@ -68,8 +122,8 @@
         background-color: #a3d6ac;
     }
     footer{
-        background-color: #074A6E;
-        color:#EFF8FB;
+        background-color: #003653;
+        color:#f700ff;
         text-align: center;
         font-size: .8em;
         font-style: italic;
@@ -79,20 +133,21 @@
         clear: both;   /*stops any flexing*/
     }
     footer a{
-        color:#EFF8FB;
+        color:#3aceff;
     }
     h1{
         line-height: 200%;
         padding-top: 50px;
         padding-left: 2em;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
     }
     h2{
         font-size: 1.8em;
         color: #145E6E;
         border-bottom: 2px solid #B5CDD8;
         padding-bottom: 10px;
-        margin-top: 1.5em;
+        margin-top: 0px;
 
     }
     /* #endregion */
@@ -167,8 +222,8 @@
     }
     /* #endregion */
     /* #region Courses */
-    .courses {      /* multiple classes having the same style */
-            padding: 80px 0;
+    .courses {
+            padding: 0__________px 0;
         }
     .courses h2 {
             text-align: center;
@@ -178,7 +233,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+            flex-wrap: wrap;
         }
     .course {
             width: 30%;
@@ -191,7 +246,7 @@
             margin-bottom: 20px;
         }
     .course ul {
-            list-style: none;
+            list-style: disc;
             padding: 0;
             text-align: left;
         }
@@ -214,7 +269,7 @@
         padding: 30px;
         /* shadow the tag and rgba(%,%,%,%) */
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        background-color: #EFF8FB;
+        background-color: #6d00a0;
     }
     /*
         display: flex; -> property that is applied to the parent element
@@ -224,30 +279,6 @@
     #container{
         display: flex;
         min-height: 600px;
-    }
-    #webInstHero{
-        background-image: url(assets/images/WebDevInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
-    }
-    #dataInstHero{
-        background-image: url(assets/images/DataSciInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
-    }
-    #pyInstHero{
-        background-image: url(assets/images/PythonInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
     }
     #hero{                                  /*typical id name for pictures*/
         width: 100%;
@@ -290,51 +321,101 @@
         border-bottom: 4px solid #145E6E;
     }
     header a:link{text-decoration: none;color: #f5f5f5;}
-    header a:visited{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
     /* #endregion */
     /* #region NAV */
-    nav{
-        position: fixed;  /*HARDCODE the x,y location*/
-        top:0;
-        left:0;    /*left side should be at 0 on the page*/
-        text-align: right;
-        width: 100%;
-        padding: .5em;
-        padding-right: 0;
+    .sidebar {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
         background-color: #491be3;
-        margin: 0;
-        z-index:9999;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border-right: 20px solid #2B2B2B;
     }
-    nav a{
+
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
         text-decoration: none;
-        transition: all 0.3s;   /*CSS Animations*/
-        display:block;
-        text-align: center;
+        font-size: 16px;
+        color: #00ffff;
+        display: block;
+        transition: all 0.3s;
     }
-    /* This is similar to MIT's button.click */
-    nav a:hover{
+    .sidebar > a:hover{
         color: #28BBDC;
-        padding-left: 10px;  /* subtle move */}
-    nav a:link{color: #3F2860}
-    nav a:visited{color: #497777}
-    nav ul{
-        display: flex;
-        flex-wrap: nowrap;       /*nowrap means should be in one line*/
-        justify-content: flex-end;
-        margin: 0;
-        font-size: 1em;
-        list-style-type: none;
+        padding-left: 10px;
     }
-    nav li{
-        width: 7em;
-        padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
-        display:inline;
+    .sidebar a:link{color: #3F2860}
+
+    .sidebar-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        padding: 0 32px;
+        color: #c9f9ff;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .sidebar .sidebar-footer a {
+        color: #c9f9ff;
+        font-size: 11px;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 0;
+        transition: color 0.3s;
+    }
+
+    .sidebar .sidebar-footer a:hover {
+        color: #e2fdff;
+        text-decoration: underline;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        background-color: #491be3;
+        color: #00ffff;
+        border: 2px solid #00ffff;
+        padding: 10px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s;
+        border-radius: 4px;
+    }
+
+    .toggle-btn:hover {
+        background-color: #6a2fe8;
+        transform: scale(1.1);
+    }
+
+    .sidebar.collapsed {
+        width: 0;
+    }
+
+    #wrapper {
+        transition: margin-left .5s;
+        padding: 16px;
+        margin-left: 200px;
+    }
+
+    #wrapper.collapsed {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
     /* #endregion */
     /* #region main page */
     body{
-        background-color: #074A6E;
+        background-color: #1b4123;
         color:#00070E;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin: 0;
@@ -342,27 +423,28 @@
     main{
         width: 100%;
         padding: 2em;
-        background-color: #EFF8FB;
+        background-color: #a3d6ac;
     }
     footer{
-        background-color: #074A6E;
-        color:#EFF8FB;
+        background-color: #003653;
+        color:#f700ff;
         text-align: center;
         font-size: .6em;
         font-style: italic;
         padding: 1em 0;
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
-        clear: both;   /*stops any flexing*/
+        clear: both;
     }
     footer a{
-        color:#EFF8FB;
+        color:#f700ff;
     }
     h1{
         line-height: 150%;
         padding-top: 50px;
         padding-left: 2em;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
     }
     h2{
         font-size: 150%;
@@ -386,7 +468,7 @@
     }
     /* #endregion */  
     /* #region Class */
-    .camp{    /* is utilized to emphasize company name */
+    .camp{
         color:#145E6E;
         font-style: italic;
         font-weight: bold;
@@ -421,7 +503,7 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
-        margin-bottom: 25px;  /* Added spacing btwn cards */
+        margin-bottom: 25px;
     }
     .faq-section{
         margin-bottom: 40px;
@@ -441,8 +523,8 @@
     }
         /* #endregion */
     /* #region Courses */
-    .courses {      /* multiple classes having the same style */
-            padding: 80px 0;
+    .courses {
+            padding: 10px 0;
         }
     .courses h2 {
             text-align: center;
@@ -451,7 +533,7 @@
     .course-grid {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+            flex-wrap: wrap;
         }
     .course {
             width: 45%;
@@ -476,7 +558,7 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s ease;  /*???*/
+            transition: background-color 0.3s ease;
     }
     /* #endregion */
     /* #region id section */
@@ -485,43 +567,14 @@
         margin: auto;
         padding: 2em;
         /* shadow the tag and rgba(%,%,%,%) */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        background-color: #EFF8FB;
+        box-shadow: 0 4px 15px rgba(82, 73, 73, 0.05);
+        background-color: #6d00a0;
     }
-    /*
-        display: flex; -> property that is applied to the parent element
-            Turn the container into a "Flexbox" which automatically aligns
-            its direct children (or subitems) horizontally in a row
-    */
     #container{
         display: flex;
         min-height: 600px;
     }
-    #webInstHero{
-        background-image: url(assets/images/WebDevInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
-    }
-    #dataInstHero{
-        background-image: url(assets/images/DataSciInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
-    }
-    #pyInstHero{
-        background-image: url(assets/images/PythonInstructor.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        aspect-ratio: 4 / 3;
-        padding-bottom: 1em;
-    }
-    #hero{                                  /*typical id name for pictures*/
+    #hero{
         width: 100%;
     }
     /* #endregion */
@@ -551,7 +604,7 @@
     /* #region Header */
     header{
         background-image: url("assets/images/Banner.JPG");
-        background-size: 100% 100%;  /* both ht and wt is 100% */
+        background-size: 100% 100%;
         background-position: center;
         min-height: 75px;
         font-size: 100%;
@@ -559,52 +612,101 @@
         text-align: left;
     }
     header a:link{text-decoration: none;color: #f5f5f5;}
-    header a:visited{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
     /* #endregion */
     /* #region NAV */
-    nav{
-        position: static;  /*HARDCODE the x,y location*/
-        top:0;
-        left:0;    /*left side should be at 0 on the page*/
-        text-align: center;
-        width: 100%;
-        padding: .5em;
-        padding-right: 0;
+    .sidebar {
+        height: 100%;
+        width: 180px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
         background-color: #491be3;
-        margin: 0;
-        z-index:9999;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border-right: 20px solid #2B2B2B;
     }
-    nav a{
+
+    .sidebar a {
+        padding: 8px 8px 8px 24px;
         text-decoration: none;
-        transition: all 0.3s;   /*CSS Animations*/
-        display:block;
-        text-align: center;
+        font-size: 14px;
+        color: #00ffff;
+        display: block;
+        transition: all 0.3s;
     }
-    /* This is similar to MIT's button.click */
-    nav a:hover{
+    .sidebar > a:hover{
         color: #28BBDC;
-        padding-left: 10px;  /* subtle move */
+        padding-left: 8px;
     }
-    nav a:link{color: #3F2860}
-    nav a:visited{color: #497777}
-    nav ul{
-        display: flex;
-        flex-wrap: nowrap;       /*nowrap means should be in one line*/
-        justify-content: center;
-        margin: 0;
-        font-size: .8em;
-        list-style-type: none;
+    .sidebar a:link{color: #3F2860}
+
+    .sidebar-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        padding: 0 24px;
+        color: #c9f9ff;
+        font-size: 11px;
+        line-height: 1.4;
     }
-    nav li{
-        width: auto;
-        padding: 0 1em 0 1em;  /*top and bottom are 0 and left and right are 1em*/
-        display:inline;
+
+    .sidebar .sidebar-footer a {
+        color: #c9f9ff;
+        font-size: 10px;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 0;
+        transition: color 0.3s;
+    }
+
+    .sidebar .sidebar-footer a:hover {
+        color: #e2fdff;
+        text-decoration: underline;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        background-color: #491be3;
+        color: #00ffff;
+        border: 2px solid #00ffff;
+        padding: 8px 12px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s;
+        border-radius: 4px;
+    }
+
+    .toggle-btn:hover {
+        background-color: #6a2fe8;
+        transform: scale(1.1);
+    }
+
+    .sidebar.collapsed {
+        width: 0;
+    }
+
+    #wrapper {
+        transition: margin-left .5s;
+        padding: 16px;
+        margin-left: 180px;
+    }
+
+    #wrapper.collapsed {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
     /* #endregion */
     /* #region main page */
     body{
-        background-color: #074A6E;
+        background-color: #1b4123;
         color:#00070E;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin: 0;
@@ -612,26 +714,28 @@
     main{
         width: 100%;
         padding: 2em;
-        background-color: #EFF8FB;
+        background-color: #a3d6ac;
     }
     footer{
-        background-color: #074A6E;
-        color:#EFF8FB;
+        background-color: #003653;
+        color:#f700ff;
         text-align: center;
         font-size: .6em;
         font-style: italic;
         padding: 1em;
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
-        clear: both;   /*stops any flexing*/
+        clear: both;
     }
     footer a{
-        color:#EFF8FB;
+        color:#f700ff;
     }
     h1{
         line-height: 100%;
         padding-top: 25px;
         padding-left: 2em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
     }
     h2{
         font-size: 100%;
@@ -654,7 +758,7 @@
     }
     /* #endregion */ 
     /* #region Class */
-    .camp{    /* is utilized to emphasize company name */
+    .camp{
         color:#145E6E;
         font-style: italic;
         font-weight: bold;
@@ -677,7 +781,7 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
-        margin-bottom: 25px;  /* Added spacing btwn cards */
+        margin-bottom: 25px;
     }
     .faq-section{
         margin-bottom: 40px;
@@ -708,10 +812,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+            flex-wrap: wrap;
         }
     .course {
-            width: 100%;            /*was 45%*/
+            width: 100%;
             margin-bottom: 30px; 
             text-align: center;
         }
@@ -733,7 +837,7 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s ease;  /*???*/
+            transition: background-color 0.3s ease;
     }
     /* #endregion */
     /* #region id section */
@@ -741,19 +845,13 @@
         width: 100%;
         margin: auto;
         padding: 2em;
-        /* shadow the tag and rgba(%,%,%,%) */
-        background-color: #EFF8FB;
+        background-color: #1b4123;
     }
-    /*
-        display: flex; -> property that is applied to the parent element
-            Turn the container into a "Flexbox" which automatically aligns
-            its direct children (or subitems) horizontally in a row
-    */
     #container{
         display: flex;
         min-height: 600px;
     }
-    #hero{                                  /*typical id name for pictures*/
+    #hero{
         width: 100%;
     }
     /* #endregion */
@@ -796,10 +894,10 @@ th{
 }
 tr:nth-of-type(even){
     background-color: #DDD;
-}   /* A good one to research... */
+}
 /* #endregion */
 
-/* global property or global var  -> if you want this to apply to all tags */
+/* global property or global var */
 *{
     box-sizing: border-box;
 }  

@@ -3,20 +3,28 @@
 <head>
     <title>Ethan Stoltz - Contact</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="NavScript.js" defer></script>
 </head>
 <body>
     <header>
       <a href="index.html"><h1>Ethan Stoltz</h1></a>
     </header>
-    <nav>
-      <ul>  
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
-        <li><a href="about.html">About Me</a></li>
-      </ul>
-    </nav>
-    <div id="wrapper">
+    <div id="mySidebar" class="sidebar collapsed">
+        <button class="toggle-btn" onclick="toggleNav()">☰</button>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact Me</a>
+            <a href="about.html">About Me</a>
+
+        <div class="sidebar-footer">
+            <i class="camp" style="color: #EFF8FB;">Ethan Stoltz</i> 2026<br>
+            123 Main Street, Yourtown USA<br>
+            Contact: <a href="mailto:ethan.stoltz016@gmail.com">ethan.stoltz016@gmail.com</a><br>
+            812-568-6570
+        </div>
+    </div>
+    
+    <div id="wrapper" class="collapsed">
     <main>
         <h2 style="text-align: center;">Contact Us</h2>
         <p>Have a question or want to learn more about Ethan Stoltz? Get in touch!</p>
@@ -31,5 +39,12 @@
         </form>
     </main>
     </div>
+    <footer>
+        <i class="camp" style="color: #EFF8FB;">Ethan Stoltz</i> 2026<br>
+        123 Main Street, Yourtown USA<br>
+        Contact: <a href="mailto:ethan.stoltz016@gmail.com">ethan.stoltz016@gmail.com</a><br>
+        <a href="tel:812-568-6570" id="mobile">812-568-6570</a>
+        <span id="desktop">812-568-6570</span>
+    </footer>
 </body>
 </html>
