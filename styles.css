@@ -1,16 +1,33 @@
 /* full screen or desktop mode */
 @media(min-width:1024px){
     /* #region Header */
-    header{
+    header {
         background-image: url("assets/images/Banner.jpg");
-        background-size: 100% 100%;  /* both ht and wt is 100% */
+        background-size: 100% 100%; /* Keeps your original "stretch to fit" setting */
         background-position: center;
         min-height: 180px;
-        font-size: 120%;
         margin-top: 50px;
-        text-align: left;
         border-bottom: 4px solid #145E6E;
+        padding: 0; /* Remove padding here to avoid shifting the background */
     }
+
+    header a {
+        display: flex !important;
+        align-items: center;
+        text-decoration: none;
+        height: 180px; /* Match your header height to help center vertically */
+        padding-left: 2em; /* This moves both the logo and text together */
+    }
+
+    header h1 {
+        margin: 0 !important;
+        padding: 0 !important; /* Removes the extra padding that was pushing it away */
+        line-height: 1; 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
+        font-size: 2.5rem;
+    }
+
     header a:link{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
     /* #endregion */
@@ -204,21 +221,6 @@
         box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
         margin-bottom: 25px;  /* Added spacing btwn cards */
     }
-    .faq-section{
-        margin-bottom: 40px;
-    }
-    .faq-item{
-        border-bottom: 1px solid #B5CDD8;
-        padding: 15px 0;
-    }
-    .question{
-        font-weight: bold;
-        color: #074A6E;
-        margin-bottom: 5px;
-    }
-    .answer{
-        margin-left: 20px;
-        color:#417692;
     }
     /* #endregion */
     /* #region Courses */
@@ -305,20 +307,36 @@
     #desktop{
         display:inline;    /* visibility off */
     }
-}
+
 
 /* tablet mode or half screen */
 @media(max-width:1024px) and (min-width:600px){
     /* #region Header */
-    header{
-        background-image: url("assets/images/Banner.JPG");
-        background-size: 100% 100%;  /* both ht and wt is 100% */
+    header {
+        background-image: url("assets/images/Banner.jpg");
+        background-size: 100% 100%; /* Keeps your original "stretch to fit" setting */
         background-position: center;
-        min-height: 150px;
-        font-size: 120%;
+        min-height: 180px;
         margin-top: 50px;
-        text-align: left;
         border-bottom: 4px solid #145E6E;
+        padding: 0; /* Remove padding here to avoid shifting the background */
+    }
+
+    header a {
+        display: flex !important;
+        align-items: center;
+        text-decoration: none;
+        height: 180px; /* Match your header height to help center vertically */
+        padding-left: 2em; /* This moves both the logo and text together */
+    }
+
+    header h1 {
+        margin: 0 !important;
+        padding: 0 !important; /* Removes the extra padding that was pushing it away */
+        line-height: 1; 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
+        font-size: 2.5rem;
     }
     header a:link{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
@@ -505,22 +523,6 @@
         box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
         margin-bottom: 25px;
     }
-    .faq-section{
-        margin-bottom: 40px;
-    }
-    .faq-item{
-        border-bottom: 1px solid #B5CDD8;
-        padding: 15px 0;
-    }
-    .question{
-        font-weight: bold;
-        color: #074A6E;
-        margin-bottom: 5px;
-    }
-    .answer{
-        margin-left: 20px;
-        color:#417692;
-    }
         /* #endregion */
     /* #region Courses */
     .courses {
@@ -602,14 +604,31 @@
 /* mobile mode */
 @media(max-width:600px){
     /* #region Header */
-    header{
-        background-image: url("assets/images/Banner.JPG");
-        background-size: 100% 100%;
+    header {
+        background-image: url("assets/images/Banner.jpg");
+        background-size: 100% 100%; /* Keeps your original "stretch to fit" setting */
         background-position: center;
-        min-height: 75px;
-        font-size: 100%;
-        margin-top: 0px;
-        text-align: left;
+        min-height: 180px;
+        margin-top: 50px;
+        border-bottom: 4px solid #145E6E;
+        padding: 0; /* Remove padding here to avoid shifting the background */
+    }
+
+    header a {
+        display: flex !important;
+        align-items: center;
+        text-decoration: none;
+        height: 180px; /* Match your header height to help center vertically */
+        padding-left: 2em; /* This moves both the logo and text together */
+    }
+
+    header h1 {
+        margin: 0 !important;
+        padding: 0 !important; /* Removes the extra padding that was pushing it away */
+        line-height: 1; 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        color: #00ffff;
+        font-size: 2.5rem;
     }
     header a:link{text-decoration: none;color: #f5f5f5;}
     header a:hover{text-decoration: none;color: #f5f5f5;}
@@ -789,15 +808,6 @@
     .faq-item{
         border-bottom: 1px solid #B5CDD8;
         padding: 15px 0;
-    }
-    .question{
-        font-weight: bold;
-        color: #074A6E;
-        margin-bottom: 5px;
-    }
-    .answer{
-        margin-left: 20px;
-        color:#417692;
     }
     /* #endregion */
     /* #region Courses */
