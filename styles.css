@@ -306,7 +306,7 @@
     #desktop{
         display:inline;    /* visibility off */
     }
-
+}
 
 /* tablet mode or half screen */
 @media(max-width:1024px) and (min-width:600px){
